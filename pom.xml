@@ -8,19 +8,17 @@
 	<name>Advanced Selenium Webdriver</name>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.11.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.26.0</version>
-		</dependency>
-
-		<!-- https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.24.2</version>
+			<artifactId>selenium-api</artifactId>
+			<version>4.21.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -28,13 +26,25 @@
 			<version>2.24.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.11.0</version>
-			<scope>compile</scope>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-manager</artifactId>
+			<version>4.38.0</version>
 		</dependency>
-
-
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>4.21.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>4.21.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>4.38.0</version>
+		</dependency>
 	</dependencies>
 
 
@@ -67,10 +77,4 @@
 		</plugins>
 
 	</build>
-
-
-
-
-
-
 </project>

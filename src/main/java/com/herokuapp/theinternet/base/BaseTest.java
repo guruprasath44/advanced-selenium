@@ -20,7 +20,7 @@ public class BaseTest {
 		String testName = ctx.getCurrentXmlTest().getName();
 		log = LogManager.getLogger(testName);
 		
-		BrowserDriverFactory factory = new BrowserDriverFactory(browser, log);
+		BrowserDriverFactory factory = new BrowserDriverFactory ( browser, log );
 		driver = factory.createDriver();
 		
 		// This sleep here is for instructor only. Students don't need this here
@@ -30,7 +30,7 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		
-		driver.manage().window().maximize();
+		driver.manage ().window ().maximize ();
 	}
 
 	@AfterMethod(alwaysRun = true)

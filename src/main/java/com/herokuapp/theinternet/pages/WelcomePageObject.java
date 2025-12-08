@@ -14,7 +14,7 @@ public class WelcomePageObject extends BasePageObject{
 
     /** Open WelcomePage with it's url */
     public void openPage() {
-        String pageUrl = "http://the-internet.herokuapp.com/";
+        String pageUrl = "https://the-internet.herokuapp.com/";
         log.info("Opening page: " + pageUrl );
         openUrl( pageUrl );
         log.info("Page opened!");
@@ -23,7 +23,7 @@ public class WelcomePageObject extends BasePageObject{
     /** Open LoginPage by clicking on Form Authentication Link */
     public LoginPage clickFormAuthenticationLink() {
         log.info("Clicking Form Authentication link on Welcome Page");
-       click(formAuthenticationLinkLocator);
+        click(formAuthenticationLinkLocator);
         return new LoginPage(driver, log);
     }
 
