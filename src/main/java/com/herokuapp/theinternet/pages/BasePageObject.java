@@ -62,6 +62,11 @@ public class BasePageObject {
         return driver.getPageSource();
     }
 
+    /** Switch to iFrame using it's locator */
+    protected void switchToFrame(By frameLocator) {
+        driver.switchTo().frame(find(frameLocator));
+    }
+
     /**
      * Wait for specific ExpectedCondition for the given amount of time in seconds
      */
@@ -100,10 +105,9 @@ public class BasePageObject {
         String firstWindow = driver.getWindowHandle();
 
         Set<String> allWindows = driver.getWindowHandles();
-        Iterator<String> windowsIterator = allWindows.iterator();
 
-        while (windowsIterator.hasNext()) {
-            String windowHandle = windowsIterator.next().toString();
+        for (String allWindow : allWindows) {
+            String windowHandle = allWindow.toString();
             if (!windowHandle.equals(firstWindow)) {
                 driver.switchTo().window(windowHandle);
                 if (getCurrentPageTitle().equals(expectedTitle)) {
