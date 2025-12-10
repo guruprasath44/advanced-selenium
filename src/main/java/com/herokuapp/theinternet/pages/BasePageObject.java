@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class BasePageObject {
@@ -30,12 +31,16 @@ public class BasePageObject {
     protected WebElement find(By locator) {
         return driver.findElement(locator);
     }
-
+    /** Find all elements using given locator */
+    protected List<WebElement> findAll(By locator) {
+        return driver.findElements(locator);
+    }
     /** Click on element with given locator when its visible */
     protected void click(By locator) {
         waitForVisibilityOf(locator, Duration.ofSeconds(5));
         find(locator).click();
     }
+
 
     /** Type given text into element with given locator */
     protected void type(String text, By locator) {
