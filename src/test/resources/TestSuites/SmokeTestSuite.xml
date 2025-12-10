@@ -7,5 +7,10 @@
             <class name="com.herokuapp.theinternet.loginpagetests.PositiveLogInTests" />
         </classes>
     </test>
+    <test name="AlertsTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.alertstests.AlertsTests" />
+        </classes>
+    </test>
 
 </suite>
