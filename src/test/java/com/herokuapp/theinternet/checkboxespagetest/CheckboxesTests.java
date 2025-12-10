@@ -18,18 +18,10 @@ public class CheckboxesTests extends TestUtilities {
 
         // Click on Checkboxes link
         CheckboxesPage checkboxesPage = welcomePage.clickCheckboxesLink ( );
-        try {
-            Thread.sleep ( 2000 );
-        } catch (InterruptedException e) {
-            throw new RuntimeException ( e );
-        }
+
         // Select All Checkboxes
         checkboxesPage.selectAllCheckboxes ( );
-        try {
-            Thread.sleep ( 2000 );
-        } catch (InterruptedException e) {
-            throw new RuntimeException ( e );
-        }
+
         // Verify all checkboxes are checked
         Assert.assertTrue ( checkboxesPage.areAllCheckboxesChecked ( ), "Not all checkboxes are checked" );
 

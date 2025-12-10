@@ -4,7 +4,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserDriverFactory {
 
@@ -20,22 +22,28 @@ public class BrowserDriverFactory {
 	public WebDriver createDriver() {
 		// Create driver
 		log.info("Create driver: " + browser);
-
+		ChromeOptions Coptions = new ChromeOptions();
+		FirefoxOptions FFoptions = new FirefoxOptions();
 		switch (browser) {
 		case "chrome":
 			//System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-			driver.set(new ChromeDriver());
+
+			Coptions.addArguments("--headless=new");
+			driver.set(new ChromeDriver(Coptions));
 			break;
 
 			case "firefox":
 			//	System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-				driver.set(new FirefoxDriver());
+				// Add the --headless argument to enable headless mode
+				FFoptions.addArguments("--headless");
+				driver.set(new FirefoxDriver(FFoptions));
 				break;
 
 			default:
 				System.out.println("Do not know how to start: " + browser + ", starting chrome.");
 				//System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-				driver.set(new ChromeDriver());
+				Coptions.addArguments("--headless=new");
+				driver.set(new ChromeDriver(Coptions));
 				break;
 		}
 
