@@ -29,21 +29,24 @@ public class BrowserDriverFactory {
 			//System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 
 			Coptions.addArguments("--headless=new");
-			driver.set(new ChromeDriver(Coptions));
+			//driver.set(new ChromeDriver(Coptions));
+			driver.set(new ChromeDriver());
 			break;
 
 			case "firefox":
 			//	System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
 				// Add the --headless argument to enable headless mode
 				FFoptions.addArguments("--headless");
-				driver.set(new FirefoxDriver(FFoptions));
+				//driver.set(new FirefoxDriver(FFoptions));
+				driver.set(new FirefoxDriver());
 				break;
 
 			default:
 				System.out.println("Do not know how to start: " + browser + ", starting chrome.");
 				//System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-				Coptions.addArguments("--headless=new");
-				driver.set(new ChromeDriver(Coptions));
+				//Coptions.addArguments("--headless=new");
+				//driver.set(new ChromeDriver(Coptions));
+				driver.set(new ChromeDriver());
 				break;
 		}
 
