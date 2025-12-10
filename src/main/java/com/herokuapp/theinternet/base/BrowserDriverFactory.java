@@ -2,7 +2,6 @@ package com.herokuapp.theinternet.base;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
