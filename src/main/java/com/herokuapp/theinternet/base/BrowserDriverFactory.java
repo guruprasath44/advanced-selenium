@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserDriverFactory {
 
-	private final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	private final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private final String browser;
 	private final Logger log;
 
@@ -20,7 +20,7 @@ public class BrowserDriverFactory {
 
 	public WebDriver createDriver() {
 		// Create driver
-		log.info("Create driver: " + browser);
+        log.info("Create driver: {}", browser);
 		ChromeOptions Coptions = new ChromeOptions();
 		FirefoxOptions FFoptions = new FirefoxOptions();
 		switch (browser) {
@@ -42,10 +42,7 @@ public class BrowserDriverFactory {
 
 			default:
 				System.out.println("Do not know how to start: " + browser + ", starting chrome.");
-				//System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-				//Coptions.addArguments("--headless=new");
-				//driver.set(new ChromeDriver(Coptions));
-				driver.set(new ChromeDriver());
+                driver.set(new ChromeDriver());
 				break;
 		}
 
