@@ -4,8 +4,14 @@ import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
 import com.herokuapp.theinternet.pages.SecureAreaPage;
 import com.herokuapp.theinternet.pages.WelcomePageObject;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+import static org.apache.commons.io.FileUtils.waitFor;
 
 public class PositiveLogInTests extends TestUtilities {
 
@@ -21,10 +27,13 @@ public class PositiveLogInTests extends TestUtilities {
 		LoginPage loginPage = welcomePage.clickFormAuthenticationLink ();
 
 		//execute log in
+
 		SecureAreaPage secureAreaPage = loginPage.logIn ( "tomsmith", "SuperSecretPassword!" );
 
 		// Verifications
 		// New page url is expected
+		sleep ( 3000 );
+
 		Assert.assertEquals(secureAreaPage.getCurrentUrl(), secureAreaPage.getPageUrl());
 
 		// log out button is visible

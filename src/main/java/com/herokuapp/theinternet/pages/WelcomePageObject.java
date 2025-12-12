@@ -19,7 +19,7 @@ public class WelcomePageObject extends BasePageObject{
 
     /** Open WelcomePage with it's url */
     public void openPage() {
-        String pageUrl = "https://the-internet.herokuapp.com/";
+        String pageUrl = "https://the-internet.herokuapp.com";
         log.info("Opening page: " + pageUrl );
         openUrl( pageUrl );
         log.info("Page opened!");
