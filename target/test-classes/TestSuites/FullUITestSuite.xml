@@ -54,5 +54,36 @@
             <class name="com.herokuapp.theinternet.windowstests.WindowsTests" />
         </classes>
     </test>
+    <test name="EditorTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.editortests.EditorTests" />
+        </classes>
+    </test>
+
+    <test name="KeyPressesTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.keypressestests.KeyPressesTests" />
+        </classes>
+    </test>
+
+    <test name="UploadTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.uploaderTests.UploadTests" />
+        </classes>
+    </test>
+
+    <test name="DragAndDropTests-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.draganddropTests.DragAndDropTests" />
+        </classes>
+    </test>
+
+    <test name="DragAndDropTests-FF">
+    <parameter name="browser" value="firefox"></parameter>
+    <classes>
+        <class name="com.herokuapp.theinternet.draganddropTests.DragAndDropTests" />
+    </classes>
+    </test>
 
 </suite>

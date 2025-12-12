@@ -3,6 +3,7 @@ package com.herokuapp.theinternet.pages;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.nio.file.Paths;
 
@@ -42,6 +43,7 @@ public class FileUploaderPage extends BasePageObject{
 
     /** Get names of uploaded files */
     public String getUploadedFilesNames() {
+        waitForVisibilityOf ( uploadedFilesLocator, java.time.Duration.ofSeconds(5) );
         String names = find(uploadedFilesLocator).getText();
         log.info("Uploaded files: " + names);
         return names;
