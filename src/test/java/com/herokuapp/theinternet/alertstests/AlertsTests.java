@@ -12,7 +12,6 @@ public class AlertsTests extends TestUtilities {
 
     @Test
     public void jsAlertTest() {
-        log.info("Starting jsAlertTest");
         SoftAssert softAssert = new SoftAssert ();
 
         // open main page
@@ -48,7 +47,6 @@ public class AlertsTests extends TestUtilities {
 
     @Test
     public void jsDismissTest() {
-        log.info("Starting jsDismissTest");
 
         // open main page
         WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
@@ -81,7 +79,6 @@ public class AlertsTests extends TestUtilities {
 
     @Test
     public void jsPromptTest() {
-        log.info("Starting jsDismissTest");
 
         // open main page
         WelcomePageObject welcomePage = new WelcomePageObject(driver, log);

@@ -2,6 +2,9 @@
 
 <suite name="SmokeTestSuite" verbose="1">
 
+    <listeners>
+        <listener class-name="com.herokuapp.theinternet.base.TestiListener"></listener>
+    </listeners>
     <test name="PositiveLogInTest">
         <classes>
             <class name="com.herokuapp.theinternet.loginpagetests.PositiveLogInTests" />
@@ -10,6 +13,11 @@
     <test name="AlertsTests">
         <classes>
             <class name="com.herokuapp.theinternet.alertstests.AlertsTests" />
+        </classes>
+    </test>
+    <test name="UploadTests">
+        <classes>
+                <class name ="com.herokuapp.theinternet.uploaderTests.UploadTests"/>
         </classes>
     </test>
 
