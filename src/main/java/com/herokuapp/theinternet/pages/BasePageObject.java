@@ -159,5 +159,18 @@ public class BasePageObject {
         */
     }
 
+    /** Add cookie */
+    public void setCookie(Cookie ck) {
+        log.info("Adding cookie " + ck.getName());
+        driver.manage().addCookie(ck);
+        log.info("Cookie added");
+    }
+
+    /** Get cookie value using cookie name */
+    public String getCookie(String name) {
+        log.info("Getting value of cookie " + name);
+        return driver.manage().getCookieNamed(name).getValue();
+    }
+
 
 }
