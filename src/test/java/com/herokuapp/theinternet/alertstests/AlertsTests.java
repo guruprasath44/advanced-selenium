@@ -6,12 +6,14 @@ import com.herokuapp.theinternet.pages.WelcomePageObject;
 import com.herokuapp.theinternet.base.TestUtilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class AlertsTests extends TestUtilities {
 
     @Test
     public void jsAlertTest() {
         log.info("Starting jsAlertTest");
+        SoftAssert softAssert = new SoftAssert ();
 
         // open main page
         WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
@@ -25,7 +27,7 @@ public class AlertsTests extends TestUtilities {
         sleep(1000);
 
         // Get alert text
-        String alertMessage = alertsPage.getAlertText();
+        String alertMessage = alertsPage.getAlertText() ;
 
         // Click OK button
         alertsPage.acceptAlert();
@@ -35,12 +37,13 @@ public class AlertsTests extends TestUtilities {
         sleep(1000);
         // Verifications
         // 1 - Alert text is expected
-        Assert.assertTrue(alertMessage.equals("I am a JS Alert"),
+        softAssert.assertTrue(alertMessage.equals("I am a JS Alert"),
                 "Alert message is not expected. \nShould be 'I am a JS Alert', but it is '" + alertMessage + "'");
 
         // 2 - Result text is expected
-        Assert.assertTrue(result.equals("You successfully clicked an alert"),
+        softAssert.assertTrue(result.equals("You successfully clicked an alert"),
                 "result is not expected. \nShould be 'You successfully clicked an alert', but it is '" + result + "'");
+        softAssert.assertAll ();
     }
 
     @Test
